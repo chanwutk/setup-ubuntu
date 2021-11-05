@@ -26,6 +26,7 @@ a \
 ' -e ':a' -e '$!{n;ba};}' ~/.profile
 echo 'eval "$(pyenv init --path)"' >>~/.profile
 echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+source ~/.profile
 source ~/.bashrc
 pyenv install 3.7.12
 pyenv global 3.7.12
