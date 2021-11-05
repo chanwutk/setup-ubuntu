@@ -10,11 +10,12 @@ sudo apt autoremove -y
 # install node lts
 curl -fsSL https://fnm.vercel.app/install | bash
 source ~/.bashrc
-fnm install --lts
+~/.fnm/fnm install --lts
 
 
 # install python
-sudo apt-get update; sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
+sudo apt-get update
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 curl https://pyenv.run | bash
@@ -28,8 +29,8 @@ echo 'eval "$(pyenv init --path)"' >>~/.profile
 echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 source ~/.profile
 source ~/.bashrc
-pyenv install 3.7.12
-pyenv global 3.7.12
+~/.pyenv/bin/pyenv install 3.7.12
+~/.pyenv/bin/pyenv global 3.7.12
 
 
 # install NeoVim
