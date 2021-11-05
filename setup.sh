@@ -3,7 +3,8 @@ set -e
 
 # update system
 sudo apt update
-yes | sudo apt upgrade
+sudo apt upgrade -y
+sudo apt autoremove -y
 
 
 # install node lts
