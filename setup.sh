@@ -10,7 +10,7 @@ sudo apt autoremove -y
 # install node lts
 curl -fsSL https://fnm.vercel.app/install | bash
 source ~/.bashrc
-fnm install --lst
+fnm install --lts
 
 
 # install python
