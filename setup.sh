@@ -9,6 +9,7 @@ sudo apt autoremove -y
 
 # install node lts
 curl -fsSL https://fnm.vercel.app/install | bash
+exec $SHELL
 fnm install --lst
 
 
@@ -17,6 +18,7 @@ sudo apt-get update; sudo apt-get install -y make build-essential libssl-dev zli
 libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 curl https://pyenv.run | bash
+exec $SHELL
 pyenv install 3.7.12
 pyenv global 3.7.12
 
