@@ -41,8 +41,8 @@ sudo apt-get install -y neovim
 
 # install LunarVim
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
-lvim +"LspInstall pyright" +qall now
-lvim +"TSInstall python" +qall now
+~/.local/bin/lvim +"LspInstall pyright" +qall now
+~/.local/bin/lvim +"TSInstall python" +qall now
 
 
 # install tmux
