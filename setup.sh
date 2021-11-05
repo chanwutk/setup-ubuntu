@@ -18,9 +18,6 @@ sudo apt-get update; sudo apt-get install -y make build-essential libssl-dev zli
 libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 curl https://pyenv.run | bash
-
-# the sed invocation inserts the lines at the start of the file
-# after any initial comment lines
 sed -Ei -e '/^([^#]|$)/ {a \
 export PYENV_ROOT="$HOME/.pyenv"
 a \
@@ -28,9 +25,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 a \
 ' -e ':a' -e '$!{n;ba};}' ~/.profile
 echo 'eval "$(pyenv init --path)"' >>~/.profile
-
 echo 'eval "$(pyenv init -)"' >> ~/.bashrc
-
 source ~/.bashrc
 pyenv install 3.7.12
 pyenv global 3.7.12
