@@ -40,6 +40,9 @@ sudo apt-get update
 sudo apt-get install -y neovim
 
 
+source ~/.bashrc
+
+
 # install LunarVim
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 ~/.local/bin/lvim +"LspInstall pyright" +qall now
