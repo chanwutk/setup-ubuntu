@@ -96,7 +96,18 @@ eval "`fnm env`"
 # Conda Init
 
 # Autoenv
-source $XDG_CONFIG_HOME/autoenv/activate.sh
+export AUTOENV_ENABLE_LEAVE=1
+source $XDG_DATA_HOME/autoenv/activate.sh
+```
+
+## Git Status
+```bash
+git clone git@github.com:chanwutk/gitstatus.git $XDG_DATA_HOME/gitstatus
+```
+
+## Autoenv
+```bash
+git clone git@github.com:hyperupcall/autoenv.git $XDG_DATA_HOME/autoenv
 ```
 
 ## Install Tmux Config
