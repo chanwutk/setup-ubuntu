@@ -64,6 +64,8 @@ export TERM="xterm-256color"
 
 # local libaries
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.local/lib
+export PATH=$HOME/.local/bin:$PATH
+export PATH="/usr/local/sbin:$PATH"
 
 export LIB_PATH=$HOME/.local
 export CFLAGS=-I${LIB_PATH}/include
