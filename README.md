@@ -13,6 +13,64 @@ sudo apt-get install git vim tmux
 sudo apt-get autoremove -y
 ```
 
+## Environment Variables to .profile or .bash_profile
+```bash
+# XDG
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+# Cleanup Home Directory
+
+# nv
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
+# docker
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+# gnupg
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+# ipython
+export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
+# jupyter
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
+# less
+export LESSHISTFILE="$XDG_STATE_HOME"/less/history
+# node
+export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
+# keras
+export KERAS_HOME="${XDG_STATE_HOME}/keras"
+# java
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+# bash_history
+export HISTFILE="${XDG_CACHE_HOME}/bash/history"
+# npm
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+# gem
+export GEM_HOME="$XDG_DATA_HOME"/gem
+export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
+# python
+export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
+
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+alias yarn="yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config"
+
+export TERM="xterm-256color"
+
+# local libaries
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.local/lib
+
+export LIB_PATH=$HOME/.local
+export CFLAGS=-I${LIB_PATH}/include
+export LDFLAGS=-L${LIB_PATH}/lib
+
+export LANG="en_US.UTF-8"
+```
+
+## Install Tmux Config
+```bash
+git clone git@github.com:chanwutk/tmux.git $XDG_CONFIG_HOME/tmux
+```
+
 ## Install Node LTS
 ```bash
 curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "$HOME/.local/bin"
