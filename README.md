@@ -52,7 +52,7 @@ export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
 export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
 # python
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
-# Autoenv
+# autoenv
 export AUTOENV_AUTH_FILE="$XDG_STATE_HOME"/autoenv/authorized_list
 export AUTOENV_NOTAUTH_FILE="$XDG_STATE_HOME"/autoenv/not_authorized_list
 export AUTOENV_ENABLE_LEAVE=1
