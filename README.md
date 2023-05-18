@@ -66,9 +66,45 @@ export LDFLAGS=-L${LIB_PATH}/lib
 export LANG="en_US.UTF-8"
 ```
 
+## Add to .bashrc
+```bash
+# Aliases
+alias vim="nvim"
+
+# Git Statue
+source $XDG_DATA_HOME/gitstatus/gitstatus.prompt.sh
+
+# HSTR configuration - add this to ~/.bashrc
+alias hh=hstr                    # hh to be alias for hstr
+export HSTR_CONFIG=hicolor       # get more colors
+shopt -s histappend              # append new history items to .bash_history
+export HISTCONTROL=ignorespace   # leading space hides commands from history
+export HISTFILESIZE=10000        # increase history file size (default is 500)
+export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
+# ensure synchronization between bash memory and history file
+export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
+if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
+# if this is interactive shell, then bind 'kill last command' to Ctrl-x k
+if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
+export HSTR_TIOCSTI=y
+
+export HSTR_CONFIG=$HSTR_CONFIG,hide-basic-help
+
+# fnm
+eval "`fnm env`"
+
+# Conda Init
+
+# Autoenv
+source $XDG_CONFIG_HOME/autoenv/activate.sh
+```
+
 ## Install Tmux Config
 ```bash
 git clone git@github.com:chanwutk/tmux.git $XDG_CONFIG_HOME/tmux
+
+# if tmux < 2.8
+alias tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"
 ```
 
 ## Install Node LTS
