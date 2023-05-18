@@ -79,7 +79,7 @@ export LANG="en_US.UTF-8"
 # Aliases
 alias vim="nvim"
 
-# Git Statue
+# Git Status
 source $XDG_DATA_HOME/gitstatus/gitstatus.prompt.sh
 
 # HSTR configuration - add this to ~/.bashrc
