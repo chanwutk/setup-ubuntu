@@ -9,7 +9,7 @@ git clone https://github.com/chanwutk/setup-ubuntu.git
 ```bash
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get install git vim tmux
+sudo apt-get install git vim tmux hstr
 sudo apt-get autoremove -y
 ```
 
